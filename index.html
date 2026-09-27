@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Module 2 Exam Command Center | 100% PDF Ground Truth</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for crisp formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+  <!-- App Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Top Header Navigation -->
+  <header class="header-wrapper">
+    <div class="header-top">
+      <div class="logo-brand">
+        <span class="brand-badge">ML-MOD-2</span>
+        <span class="brand-title">ML Module 2 Exam Command Center</span>
+        <span class="brand-sub">Strict Course PDF Ground Truth</span>
+      </div>
+      <div class="header-actions">
+        <div class="exam-today-pill">
+          <span>⚡</span>
+          <span>Exam Today — Ready for Action</span>
+        </div>
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle theme">
+          ☀️ Light
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Navigation Tabs -->
+    <nav class="nav-tabs-container" aria-label="Primary Navigation">
+      <button class="nav-tab-btn active" data-tab="dashboard">📊 Dashboard</button>
+      <button class="nav-tab-btn" data-tab="learn">📖 Learning Mode</button>
+      <button class="nav-tab-btn" data-tab="visual-lab">🧪 Visual Lab</button>
+      <button class="nav-tab-btn" data-tab="numerical">🧮 Numerical Lab</button>
+      <button class="nav-tab-btn" data-tab="cards">🃏 Algorithm Cards</button>
+      <button class="nav-tab-btn" data-tab="compare">⚖️ Comparisons</button>
+      <button class="nav-tab-btn" data-tab="game">🎮 Which Algorithm?</button>
+      <button class="nav-tab-btn" data-tab="quiz">📝 Quiz Mode</button>
+      <button class="nav-tab-btn" data-tab="exam">🎯 Exam Simulator</button>
+      <button class="nav-tab-btn" data-tab="revision">⚡ Final Revision</button>
+    </nav>
+  </header>
+
+  <!-- Main Content Views Container -->
+  <main class="app-main">
+
+    <!-- 1. DASHBOARD VIEW -->
+    <section id="view-dashboard" class="tab-view active">
+      <div class="dashboard-grid">
+        <!-- Progress Overview -->
+        <div class="dash-card">
+          <h3>
+            <span>Mastery Overview</span>
+            <span class="badge badge-accent" id="dash-progress-pct">0%</span>
+          </h3>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="dash-progress-bar-fill" style="width: 0%;"></div>
+          </div>
+          <div class="progress-stat-row" id="dash-stat-summary">
+            <span>Mastered: 0 / 12</span>
+            <span>Practiced: 0</span>
+            <span>Learning: 0</span>
+            <span>Quiz Avg: 0%</span>
+          </div>
+          <div style="margin-top: 14px; display: flex; justify-content: flex-end;">
+            <button id="reset-progress-btn" class="btn btn-sm btn-secondary" style="font-size: 0.72rem;">Reset Progress</button>
+          </div>
+        </div>
+
+        <!-- Quick Launch Pad -->
+        <div class="dash-card">
+          <h3>Quick Launch</h3>
+          <div class="quick-launch-grid">
+            <button class="quick-launch-btn" onclick="window.mlApp.switchTab('exam')">
+              <span class="icon">🎯</span>
+              <span>Mock Exam</span>
+            </button>
+            <button class="quick-launch-btn" onclick="window.mlApp.switchTab('visual-lab')">
+              <span class="icon">🧪</span>
+              <span>Visual Lab</span>
+            </button>
+            <button class="quick-launch-btn" onclick="window.mlApp.switchTab('numerical')">
+              <span class="icon">🧮</span>
+              <span>Numericals</span>
+            </button>
+            <button class="quick-launch-btn" onclick="window.mlApp.switchTab('cards')">
+              <span class="icon">🃏</span>
+              <span>Cards</span>
+            </button>
+            <button class="quick-launch-btn" onclick="window.mlApp.switchTab('game')">
+              <span class="icon">🎮</span>
+              <span>Scenario Game</span>
+            </button>
+            <button class="quick-launch-btn" onclick="window.mlApp.switchTab('revision')">
+              <span class="icon">⚡</span>
+              <span>5-Min Cram</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Weak Topics / Focus Area -->
+        <div class="dash-card">
+          <h3>🚨 Priority Revision Focus</h3>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px;">
+            Auto-detected from quizzes, calculations & mock exam scores:
+          </p>
+          <div id="dash-weak-topics-list" class="weak-topics-list">
+            <div class="text-muted" style="font-size: 0.85rem;">No weak topics detected yet! Complete a quiz or numerical track to calibrate focus areas.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master Learning Map -->
+      <div class="map-canvas-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <div>
+            <h3>🗺️ Master Concept Map — Supervised Learning Architecture</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Click any node to jump directly to its complete A–K curriculum and formulas.
+            </p>
+          </div>
+          <span class="badge badge-accent">187 Pages Mapped</span>
+        </div>
+        <div id="master-map-tree"></div>
+      </div>
+    </section>
+
+    <!-- 2. LEARNING MODE VIEW -->
+    <section id="view-learn" class="tab-view">
+      <div class="learn-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="topics-sidebar" id="learn-topics-sidebar" aria-label="Course Topics"></aside>
+        
+        <!-- Topic Content Viewer (A-K structure) -->
+        <section class="learn-viewer" id="learn-topic-viewer" aria-live="polite"></section>
+      </div>
+    </section>
+
+    <!-- 3. VISUAL LAB VIEW -->
+    <section id="view-visual-lab" class="tab-view">
+      <div class="svm-tabs-nav" style="margin-bottom: 18px;">
+        <button class="tab-btn lab-nav-btn active" data-lab="linear_reg">📈 Linear Regression (OLS & Residuals)</button>
+        <button class="tab-btn lab-nav-btn" data-lab="logistic_reg">📉 Logistic Regression (Sigmoid & Threshold)</button>
+        <button class="tab-btn lab-nav-btn" data-lab="knn_lab">🎯 K-Nearest Neighbour (Iris 2D)</button>
+        <button class="tab-btn lab-nav-btn" data-lab="dt_lab">🌳 Decision Tree (ID3 & CART Splits)</button>
+        <button class="tab-btn lab-nav-btn" data-lab="svm_lab">⚡ Support Vector Machine & Kernels</button>
+      </div>
+      <div id="visual-lab-mount"></div>
+    </section>
+
+    <!-- 4. NUMERICAL LAB VIEW -->
+    <section id="view-numerical" class="tab-view">
+      <div class="numerical-layout">
+        <!-- Numerical Problem Tracks -->
+        <aside class="topics-sidebar" id="numerical-sidebar" aria-label="Numerical Problems"></aside>
+
+        <!-- Progressive Step-by-Step Solver -->
+        <section class="learn-viewer" id="numerical-content" aria-live="polite"></section>
+      </div>
+    </section>
+
+    <!-- 5. ALGORITHM CARDS VIEW -->
+    <section id="view-cards" class="tab-view">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h2>🃏 Algorithm Revision Flashcards</h2>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">
+            High-yield memory cards summarizing What, Why, Inputs, Outputs, Key Formulas, and Exam Traps.
+          </p>
+        </div>
+        <div class="cards-filter-bar">
+          <button class="tab-btn card-filter-btn active" data-filter="all">All (8)</button>
+          <button class="tab-btn card-filter-btn" data-filter="regression">Regression</button>
+          <button class="tab-btn card-filter-btn" data-filter="classification">Classification</button>
+          <button class="tab-btn card-filter-btn" data-filter="ensemble">Ensemble</button>
+        </div>
+      </div>
+      <div class="algo-cards-grid" id="algo-cards-container"></div>
+    </section>
+
+    <!-- 6. COMPARISONS VIEW -->
+    <section id="view-compare" class="tab-view">
+      <div style="margin-bottom: 16px;">
+        <h2>⚖️ High-Yield Comparison Matrices</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">
+          Key distinctions, boundary behaviors, and formulas frequently tested as 3–5 mark questions.
+        </p>
+      </div>
+      <div class="svm-tabs-nav" id="comp-tabs-nav"></div>
+      <div id="comp-table-container"></div>
+    </section>
+
+    <!-- 7. WHICH ALGORITHM? GAME VIEW -->
+    <section id="view-game" class="tab-view">
+      <div class="scenario-game-container">
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h2>🎮 "Which Algorithm?" Scenario Arena</h2>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">
+            Test your real-time algorithm selection intuition across real-world situations from the course slides.
+          </p>
+        </div>
+        <div id="scenario-game-card"></div>
+      </div>
+    </section>
+
+    <!-- 8. QUIZ MODE VIEW -->
+    <section id="view-quiz" class="tab-view">
+      <div style="margin-bottom: 16px;">
+        <h2>📝 Tiered Topic Quizzes</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">
+          From fundamental terminology to advanced mathematical proofs and keyword explanations.
+        </p>
+      </div>
+      <div class="svm-tabs-nav" id="quiz-level-nav"></div>
+      <div id="quiz-content-container" style="margin-top: 16px;"></div>
+    </section>
+
+    <!-- 9. EXAM SIMULATOR VIEW -->
+    <section id="view-exam" class="tab-view">
+      <div id="exam-mount">
+        <!-- Initial Splash Card before starting exam -->
+        <div class="scorecard-hero" style="max-width: 760px; margin: 30px auto; text-align: left;">
+          <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 12px;">🎯 Final Exam Simulator</h2>
+          <p style="text-align: center; color: var(--accent-secondary); font-size: 1rem; margin-bottom: 24px;">
+            Rigorous 20-Question Timed Mock Exam (Strictly from "ML Module 2 - v1.pdf")
+          </p>
+          <div style="background: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin-bottom: 24px;">
+            <h4 style="margin-bottom: 10px; color: var(--text-primary);">Exam Instructions:</h4>
+            <ul style="padding-left: 20px; font-size: 0.92rem; line-height: 1.7; color: var(--text-secondary);">
+              <li><strong>Time Allowed:</strong> 25 minutes (automatic countdown timer).</li>
+              <li><strong>Total Questions:</strong> 20 questions covering all 12 modules.</li>
+              <li><strong>Simulation Mode:</strong> No hints or answers revealed until final submission.</li>
+              <li><strong>Navigation:</strong> Use the question palette to jump between questions or flag questions for review.</li>
+              <li><strong>Post-Exam Analytics:</strong> Instant score report with topic-wise breakdown and automated revision recommendations.</li>
+            </ul>
+          </div>
+          <div style="text-align: center;">
+            <button class="btn btn-primary" style="padding: 12px 28px; font-size: 1.05rem;" onclick="window.mlApp.startExam()">
+              🚀 Start Mock Exam Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FINAL REVISION VIEW -->
+    <section id="view-revision" class="tab-view">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h2>⚡ High-Impact Pre-Exam Revision</h2>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">
+            Curated summaries, golden rules, and magic numerical values to memorize before entering the hall.
+          </p>
+        </div>
+        <div class="svm-tabs-nav" style="margin-bottom: 0;">
+          <button class="tab-btn rev-tab-btn active" data-rev="30">⏳ 30-Minute Comprehensive Revision</button>
+          <button class="tab-btn rev-tab-btn" data-rev="5">🚀 5-Minute Before Exam Cram</button>
+        </div>
+      </div>
+
+      <!-- 30-Minute Revision View -->
+      <div id="rev-30-view">
+        <div id="rev-30-mount"></div>
+      </div>
+
+      <!-- 5-Minute Revision View -->
+      <div id="rev-5-view" style="display: none;">
+        <div id="rev-5-mount"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Application Logic & Scripts (Strict dependency order) -->
+  <script src="js/state.js"></script>
+  <script src="js/data/topics.js"></script>
+  <script src="js/data/numericals.js"></script>
+  <script src="js/data/cards.js"></script>
+  <script src="js/data/comparisons.js"></script>
+  <script src="js/data/scenarios.js"></script>
+  <script src="js/data/quizData.js"></script>
+  <script src="js/data/revisionData.js"></script>
+  <script src="js/visualLab/linearRegressionLab.js"></script>
+  <script src="js/visualLab/logisticRegressionLab.js"></script>
+  <script src="js/visualLab/knnLab.js"></script>
+  <script src="js/visualLab/decisionTreeLab.js"></script>
+  <script src="js/visualLab/svmLab.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

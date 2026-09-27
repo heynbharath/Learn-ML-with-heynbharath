@@ -1,0 +1,750 @@
+[
+  {
+    "page": 1,
+    "text": "MACHINE LEARNING\nSchool of Engineering\nDepartment of Computer Science and Engineering\nCourse Code: Semester: V\nCourse Title: Machine Learning Academic Year: 2026 - 2027\nFaculty Name: Prof.Shilpa Sudheendran"
+  },
+  {
+    "page": 2,
+    "text": "UNIT II\n\u2022 Module 2: Supervised Machine Learning Algorithms [09 Hours]\n\u2022 Introduction to Supervised Learning: Binary and Multi-Class Classification,\nRegression - Linear Regression and Nonlinear Regression, Logistic Regression,\nNaive Bayes Classification, Decision Trees (ID3, CART) and Random Forest, K-\nNearest Neighborhood, Support Vector Machine (Linear and Non-linear Kernels).\n\u2022 Applications: house price prediction systems, medical diagnosis systems, fault\ndetection in machines, financial risk prediction."
+  },
+  {
+    "page": 3,
+    "text": "Supervised Learning-Introduction\n\u2022 Supervised Learning is the types of machine learning in which machines are trained with well \u201cLabeled\u201d\ntraining data and on the basis of that data, machine predict the output.\n\u2022 In supervised learning, an algorithm is given a dataset containing input features (independent variables)\nand corresponding output labels (dependent variable).\n\u2022 The model learns to associate inputs with outputs by minimizing the difference between its predictions\nand actual labels during training.\n\u2022 Once trained, the model is evaluated using new data to assess its accuracy, generalization ability, and\nperformance.\n\u2022 Some real-world applications of supervised learning are Risk Assessment, Fraud Detection, Spam\nfiltering, etc"
+  },
+  {
+    "page": 4,
+    "text": "Supervised Learning-Introduction"
+  },
+  {
+    "page": 5,
+    "text": ""
+  },
+  {
+    "page": 6,
+    "text": "Supervised Learning Example\n\u2022 previously collected data is needed\nin order to train our models.\n\u2022 A model based on supervised\nlearning would require both\nprevious data and the previous\nresults as input.\n\u2022 By training with this data, the\nmodel helps in predicting results\nthat are more accurate."
+  },
+  {
+    "page": 7,
+    "text": "Supervised Learning-Introduction\n\u2022 Types of Supervised Learning Tasks:\n\u2022 Classification: The task of predicting discrete labels or categories. Examples\ninclude spam detection, sentiment analysis, and handwriting recognition.\n\u2022 Binary Classification: Two possible labels (e.g., spam vs. not spam).\n\u2022 Multiclass Classification: More than two possible labels (e.g., classifying handwritten\ndigits from 0 to 9).\n\u2022 Regression: The task of predicting continuous values. Examples include\npredicting house prices, stock prices, or temperature."
+  },
+  {
+    "page": 8,
+    "text": "Examples for classification and regression"
+  },
+  {
+    "page": 9,
+    "text": "Variable Types\n\u2022 Categorical Variables\n\u2022 These variables represent distinct categories or labels. The categories have no\ninherent order or ranking.\n\u2022 Examples: Gender (Male, Female), Colors (Red, Blue, Green), Types of vehicles (Car,\nTruck, Motorcycle).\n\u2022 Subtypes:\n\u2022 Nominal Variables: Categories have no logical order. Example: Eye color (Brown, Blue, Green).\n\u2022 Ordinal Variables: Categories have a meaningful order, but the differences between them\naren\u2019t measurable. Example: Satisfaction level (Low, Medium, High)."
+  },
+  {
+    "page": 10,
+    "text": "Variable Types\n\u2022 Numerical Variables\n\u2022 These variables represent quantities and are expressed as numbers. They can be\nmeasured and ranked.\n\u2022 Subtypes:\n\u2022 Discrete Variables: These take on distinct or countable values. They are often whole numbers.\n\u2022 Examples: Number of children, Number of cars, Exam scores (if only integers are used).\n\u2022 Continuous Variables: These can take any value within a range and are often measured rather\nthan counted.\n\u2022 Examples: Height, Weight, Temperature,Time."
+  },
+  {
+    "page": 11,
+    "text": "Variable Types\n\u2022 Binary Variables\n\u2022 A special case of categorical variables that have only two possible outcomes\nor categories.\n\u2022 Examples:\n\u2022 Yes/No questions.\n\u2022 Male/Female.\n\u2022 Success/Failure."
+  },
+  {
+    "page": 12,
+    "text": "Variable Types\n\u2022 Interval Variables\n\u2022 These variables are numerical, but the intervals between the values are meaningful\nand equal. However, interval variables do not have a true zero point, meaning that\nzero does not represent the complete absence of the quantity.\n\u2022 Examples:\n\u2022 Temperaturein Celsius or Fahrenheit (0\u00b0C does not mean \"no temperature\").\n\u2022 Dates (Year 2000 and Year 2020)."
+  },
+  {
+    "page": 13,
+    "text": "Variable Types\n\u2022 Ratio Variables\n\u2022 Like interval variables, ratio variables are numerical, but they have a\nmeaningful zero point, allowing for both differences and ratios to be\ncalculated.\n\u2022 Examples:\n\u2022 Weight (0 kg means no weight).\n\u2022 Height (0 meters means no height).\n\u2022 Income (0 dollars means no income)."
+  },
+  {
+    "page": 14,
+    "text": "Variable Types\n\u2022 Dummy Variables\n\u2022 Categorical variables that are converted into numerical form (typically binary) for use in\nmachine learning models. This process is called \"dummy encoding\" or \"one-hot encoding.\"\n\u2022 Example:\n\u2022 If \"Color\" is a categorical variable with three categories (Red, Blue, Green), you can convert it into three\ndummy variables:\n\u2022 Red (1 if the color is red, 0 otherwise),\n\u2022 Blue (1 if the color is blue, 0 otherwise),\n\u2022 Green (1 if the color is green, 0 otherwise)."
+  },
+  {
+    "page": 15,
+    "text": "Terminology\n\u2022 Training Data\n\u2022 The dataset used to train a model. It consists of input-output pairs, where the inputs are the\nfeatures, and the outputs are the labels (or target values).\n\u2022 Example: In a housing price prediction model, the training data might include features like the\nsize, number of bedrooms, and location, with the corresponding house price as the output.\n\u2022 TestingData\n\u2022 A separate dataset used to evaluate the model\u2019s performance after training. It contains input\nfeatures but no labels are shown to the model during testing.\n\u2022 Example: After training, the model is tested on new house data to see how well it predicts prices."
+  },
+  {
+    "page": 16,
+    "text": "Terminology\n\u2022 Features (Independent Variables, Predictors)\n\u2022 The input variables used to make predictions. Features are the attributes or characteristics that\nthe model uses to learn from.\n\u2022 Example: For predicting house prices, features might include square footage, number of rooms,\nand age of the house.\n\u2022 Labels (Dependent Variable, Target,Output)\n\u2022 The output variable or the \"correct\" answer the model is trying to predict. In supervised learning,\nlabels are provided in the training data.\n\u2022 Example: The house price in a house price prediction problem, or whether an email is spam or not\nin a spam classification task."
+  },
+  {
+    "page": 17,
+    "text": "Terminology\n\u2022 Model\n\u2022 The mathematical function or algorithm that is trained using the input data and makes predictions\nbased on new input data.\n\u2022 Example: A linear regression model, decision tree, or neural network.\n\u2022 Hypothesis\n\u2022 The function that maps input features to the predicted output based on the learned parameters.\nIt's essentially the model's understanding of the relationship between input and output.\n\u2022 Example: In a linear regression model, the hypothesis could be a line that fits the data, such as\ny=mx+b."
+  },
+  {
+    "page": 18,
+    "text": "Terminology\n\u2022 Loss Function (Cost Function)\n\u2022 A function that measures how well the model's predictions match the actual labels. It calculates the\ndifference between the predicted output and the actual output. The goal of training is to minimize this loss.\n\u2022 Examples:\n\u2022 Mean Squared Error (MSE): Commonly used in regression tasks.\n\u2022 Cross-Entropy Loss: Used in classification tasks.\n\u2022 Optimization Algorithm\n\u2022 The method used to minimize the loss function by adjusting the model's parameters. A popular optimization\nalgorithm is Gradient Descent.\n\u2022 Example: Gradient descent iteratively updates model parameters to minimize the loss function."
+  },
+  {
+    "page": 19,
+    "text": "Model Selection\n\u2022 Model selection refers to the process of choosing the best machine\nlearning algorithm or model for a given problem, based on its\nperformance on the data.\n\u2022 The bias-variance tradeoff plays a crucial role in model selection, as it\nhelps balance underfitting and overfitting by understanding the\nsources of error in a model."
+  },
+  {
+    "page": 20,
+    "text": "Model Selection\n\u2022 Smoothing or complexity parameters are settings used to control the\ncomplexity of a model.\n\u2022 These parameters help to balance the model\u2019s ability to fit the training data\n(complexity) with its ability to generalize to new, unseen data (smoothing).\n\u2022 Proper tuning of these parameters is crucial for achieving a good model\nthat avoids overfitting or underfitting."
+  },
+  {
+    "page": 21,
+    "text": "Model Selection\n\u2022 Overfitting\n\u2022 When a model learns too much detail from the training data, including noise,\nand performs poorly on unseen data (test data). This occurs when the model\nis too complex and fits the training data too closely.\n\u2022 Example: A model might perfectly predict house prices in the training set but\nfails to generalize to new houses."
+  },
+  {
+    "page": 22,
+    "text": "Model Selection\n\u2022 Underfitting\n\u2022 When a model is too simple to capture the underlying patterns in the data,\nleading to poor performance on both the training and test data.\n\u2022 Example: A model that assumes house prices only depend on square footage\nand ignores all other important factors."
+  },
+  {
+    "page": 23,
+    "text": "Model Selection"
+  },
+  {
+    "page": 24,
+    "text": "Model Selection\n\u2022 Smoothing or Complexity Parameters\n\u2022 Multiplier of the Penalty Term (Regularization Parameter)\n\u2022 Used in regularization techniques to penalize the complexity of the model. It controls the trade-off between\nfitting the training data well and keeping the model simpler to avoid overfitting.\n\u2022 Width of the Kernel (Kernel Width/Bandwidth)\n\u2022 Controls the smoothness of the function estimated by a kernel-based method. It determines how much\ninfluence each training example has on the prediction.\n\u2022 Number of Basis Functions\n\u2022 Controls the complexity of a model that uses basis functions to represent the input features. Basis functions\ntransform the input space into a higher-dimensional space to better capture relationships."
+  },
+  {
+    "page": 25,
+    "text": "Bias Variance Tradeoff\n\u2022 Bias\n\u2022 Bias refers to the error due to overly simplistic assumptions in the learning\nalgorithm. High bias means that the model is unable to capture the underlying\npatterns in the data, leading to underfitting.\n\u2022 Models with high bias will have low complexity, which may lead to missing important\nrelationships in the data.\n\u2022 Example: A linear regression model trying to fit a highly nonlinear relationship will\nhave high bias because it oversimplifies the data."
+  },
+  {
+    "page": 26,
+    "text": "Bias Variance Tradeoff\n\u2022 Variance\n\u2022 Variance refers to the model's sensitivity to small fluctuations in the training data. A\nmodel with high variance pays too much attention to the noise in the training data,\nleading to overfitting.\n\u2022 High-variance models tend to perform well on training data but poorly on unseen\ntest data because they learn not only the underlying pattern but also the noise.\n\u2022 Example: A decision tree with too many branches might perfectly fit the training\ndata, but when new data is introduced, it may fail to generalize well, showing high\nvariance."
+  },
+  {
+    "page": 27,
+    "text": "Bias Variance Tradeoff\n\u2022 Total Error (Prediction Error)\n\u2022 The total error in a supervised learning model is a combination of bias,\nvariance, and irreducible error (which is the noise inherent in the data that\ncannot be eliminated).\n\u2022 Error=Bias2 + Variance + Irreducible Error"
+  },
+  {
+    "page": 28,
+    "text": "Bias Variance Tradeoff\n\u2022 If the model is too simple and has very few parameters then it may have high bias and\nlow variance.\n\u2022 On the other hand if the model has large number of parameters then it\u2019s going to have\nhigh variance and low bias.\n\u2022 So, the right/good balance without overfitting and underfitting the data is needed.\n\u2022 This tradeoff in complexity is why there is a tradeoff between bias and variance.\n\u2022 An algorithm can\u2019t be more complex and less complex at the same time."
+  },
+  {
+    "page": 29,
+    "text": "Bias Variance Tradeoff"
+  },
+  {
+    "page": 30,
+    "text": "Bias Variance Tradeoff\n\u2022 Test and training error as a function of model complexity."
+  },
+  {
+    "page": 31,
+    "text": "Linear Regression\n\u2022 A linear regression model assumes that the regression function E(Y |X) is linear in\nthe inputs X1,... ,Xp.\n\u2022 Linear Regression is a simple and powerful model for predicting a numeric\nresponse from a set of one or more independent variables.\n\u2022 The linear model either assumes that the regression function E(Y |X) is linear, or\nthat the linear model is a reasonable approximation.\n\u2022 Fitting a linear regression model is all about finding the set of coefficients that\nbest model y as a function of our features."
+  },
+  {
+    "page": 32,
+    "text": "Linear Regression\n\u2022 The linear regression model has the form\n\u2022 \ud835\udc66: the dependent variable; the thing we are trying to predict.\n\u2022 \ud835\udc65\ud835\udc56: the independent variables: the features our model uses to model y.\n\u2022 \ud835\udefd\ud835\udc56: the coefficients (\"weights\") of our regression model. These are the foundations of our model. They are\nwhat our model \"learns\" during optimization.\n\u2022 \ud835\udf16: the irreducible error in our model. A term that collects together all the unmodeled parts of our data."
+  },
+  {
+    "page": 33,
+    "text": "Linear Regression\n\u2022 Example: Predict housing price\n\u2022 a very simple model, predicting the price of each house to be just the\naverage house price in our dataset, ~$290,000, ignoring the different\nsizes of each house"
+  },
+  {
+    "page": 34,
+    "text": "Linear Regression\n\u2022 These errors, or residuals, measure the distance between each\nobservation and the predicted value for that observation."
+  },
+  {
+    "page": 35,
+    "text": "Linear Regression"
+  },
+  {
+    "page": 36,
+    "text": "Linear Regression\n\u2022 The goal of linear regression is reducing this error such that we find a\nline/surface that 'best' fits our data."
+  },
+  {
+    "page": 37,
+    "text": "Linear Regression\n\u2022 For two dimensional space"
+  },
+  {
+    "page": 38,
+    "text": "Linear Regression\n\u2022 The model can be used to predict future values.\n\u2022 \ud835\udc65\ud835\udc56: 350"
+  },
+  {
+    "page": 39,
+    "text": "Linear Regression\n\u2022 Example:"
+  },
+  {
+    "page": 40,
+    "text": "Linear Regression\n\u2022 Example:"
+  },
+  {
+    "page": 41,
+    "text": "Linear Regression\n\u2022 Example:\n\u2022 Dataset\nInput - x Output - y\n1 3\n2 5\n3 7\n4 9\n5 11"
+  },
+  {
+    "page": 42,
+    "text": "Linear Regression\n\u2022 Example:"
+  },
+  {
+    "page": 43,
+    "text": "Linear Regression\n\u2022 Example:"
+  },
+  {
+    "page": 44,
+    "text": "Linear Regression\n\u2022 Example:"
+  },
+  {
+    "page": 45,
+    "text": "Linear Regression"
+  },
+  {
+    "page": 46,
+    "text": "Linear Regression"
+  },
+  {
+    "page": 47,
+    "text": "Linear Regression"
+  },
+  {
+    "page": 48,
+    "text": "Linear Regression"
+  },
+  {
+    "page": 49,
+    "text": "Linear Regression\n\u2022 The linear model with p > 1 inputs is called the multiple linear\nregression model."
+  },
+  {
+    "page": 50,
+    "text": "Linear Regression"
+  },
+  {
+    "page": 51,
+    "text": "Non-Linear Regression\n\u2022 Non-linear regression is used when the relationship between the\ndependent and independent variables is not linear. The regression\nfunction can take many different forms (exponential, polynomial,\nlogarithmic, etc.)."
+  },
+  {
+    "page": 52,
+    "text": "Non-Linear Regression"
+  },
+  {
+    "page": 53,
+    "text": "Non-Linear Regression"
+  },
+  {
+    "page": 54,
+    "text": "Non-Linear Regression"
+  },
+  {
+    "page": 55,
+    "text": "Non-Linear Regression\na * x1**2 + b * x2**2 + c * x1 * x2 + d * x1 + e * x2 + f"
+  },
+  {
+    "page": 56,
+    "text": "Linear Regression"
+  },
+  {
+    "page": 57,
+    "text": "Classification in Machine Learning\n\u2022 Classification is a supervised machine learning method where the model tries to predict the correct\nlabel of a given input data. In classification, the model is fully trained using the training data, and\nthen it is evaluated on test data before being used to perform prediction on new unseen data.\n\u2022 For instance, an algorithm can learn to predict whether a given email is spam or ham (no spam), as\nillustrated below."
+  },
+  {
+    "page": 58,
+    "text": "Classification Vs. Regression"
+  },
+  {
+    "page": 59,
+    "text": "Machine Learning Classification in Real Life\nHealthcare\nTraining a machine learning model on historical patient data can help healthcare specialists accurately analyze their diagnoses:\n\u2022 During the COVID-19 pandemic, machine learning models were implemented to efficiently predict whether a person had\nCOVID-19 or not.\nEducation\n\u2022 Education is one of the domains dealing with the most textual, video, and audio data. This unstructured information can be\nanalyzed with the help of Natural Language technologies to perform different tasks such as:\n\u2022 The classification of documents per category.\nSustainable agriculture\n\u2022 Agriculture is one of the most valuable pillars of human survival. Introducing sustainability can help improve farmers'\nproductivity at a different level without damaging the environment:\n\u2022 By using classification models to predict which type of land is suitable for a given type of seed."
+  },
+  {
+    "page": 60,
+    "text": "Different Types of Classification\nBinary Classification\nThe goal is to classify the input data into two mutually exclusive categories. The training data in such a situation is\nlabeled in a binary format: true and false; positive and negative; O and 1; spam and not spam, etc. depending on the\nproblem being tackled.\nFor instance, we might want to detect whether a given image is a truck or a boat.\nLogistic Regression and Support Vector Machines algorithms are natively designed for binary classifications. However,\nother algorithms such as K-Nearest Neighbors and Decision Trees can also be used for binary classification."
+  },
+  {
+    "page": 61,
+    "text": "Multi-Class Classification\nThe multi-class classification, on the other hand, has at least two mutually exclusive class labels,\nwhere the goal is to predict to which class a given input example belongs to. In the following case,\nthe model correctly classified the image to be a plane.\n\u2022 Most of the binary classification algorithms can be also used for multi-class classification. These \nalgorithms include but are not limited to:\n\u2022 Random Forest\n\u2022 Naive Bayes\n\u2022 K-Nearest Neighbors\n\u2022 Gradient Boosting\n\u2022 SVM\n\u2022 Logistic Regression."
+  },
+  {
+    "page": 62,
+    "text": "Multi-Class Classification\n\u2022 SVM and Logistic Regression do not support multi-class classification by default.\n\u2022 We can apply binary transformation approaches such as one-versus-one and one-versus-all to adapt native\nbinary classification algorithms for multi-class classification tasks.\n\u2022 One-versus-one: this strategy trains as many classifiers as there are pairs of labels. If we have a 3-class\nclassification, we will have three pairs of labels, thus three classifiers, as shown below.\n\u2022 For N labels, we will have Nx(N-1)/2 classifiers. Each classifier is trained on a single binary dataset, and the\nfinal class is predicted by a majority vote between all the classifiers. One-vs-one approach works best for\nSVM and other kernel-based algorithms."
+  },
+  {
+    "page": 63,
+    "text": "Multi-Class Classification\n\u2022 One-versus-rest: at this stage, we start by considering each label as an independent label and\nconsider the rest combined as only one label. With 3-classes, we will have three classifiers.\n\u2022 In general, for N labels, we will have N binary classifiers."
+  },
+  {
+    "page": 64,
+    "text": "Multi-Label Classification\n\u2022 In multi-label classification tasks, we try to predict 0 or more classes for each input example. In this\ncase, there is no mutual exclusion because the input example can have more than one label.\n\u2022 Such a scenario can be observed in different domains, such as auto-tagging in Natural Language\nProcessing, where a given text can contain multiple topics. Similarly to computer vision, an image\ncan contain multiple objects"
+  },
+  {
+    "page": 65,
+    "text": "Multi-Label Classification\n\u2022 It is not possible to use multi-class or binary classification models to perform multi-label\nclassification. However, most algorithms used for those standard classification tasks have\ntheir specialized versions for multi-label classification. We can cite:\n\u2022 Multi-label Decision Trees\n\u2022 Multi-label Gradient Boosting\n\u2022 Multi-label Random Forests"
+  },
+  {
+    "page": 66,
+    "text": ""
+  },
+  {
+    "page": 67,
+    "text": "Logistic Regression\n\u2022 Supervised Learning technique.\n\u2022 It is used for predicting the categorical dependent variable using a given set\nof independent variables.\n\u2022 Predicts the output of a categorical dependent variable.\n\u2022 It can be either Yes or No, 0 or 1, true or False, etc. but instead of giving the\nexact value as 0 and 1, it gives the probabilistic values which lie\nbetween 0 and 1.\n\u2022 Logistic Regression is a significant machine learning algorithm because it\nhas the ability to provide probabilities and classify new data using\ncontinuous and discrete datasets."
+  },
+  {
+    "page": 68,
+    "text": "Logistic Regression\n\u2022 Logistic Regression is much similar to the Linear Regression except that\nhow they are used.\n\u2022 Linear Regression is used for solving Regression problems,\nwhereas Logistic regression is used for solving the classification\nproblems.\n\u2022 Logistic Regression can be used to classify the observations using\ndifferent types of data and can easily determine the most effective\nvariables used for the classification."
+  },
+  {
+    "page": 69,
+    "text": "Logistic Regression"
+  },
+  {
+    "page": 70,
+    "text": "Logistic Regression"
+  },
+  {
+    "page": 71,
+    "text": "Logistic Regression\n\u2022 Example\n\u2022 Dataset\nStudy Hours (x) Passed (y)\n2 0\n4 0\n6 1\n8 1\n10 1"
+  },
+  {
+    "page": 72,
+    "text": "Logistic Regression\n\u2022 Example"
+  },
+  {
+    "page": 73,
+    "text": "Logistic Regression\n\u2022 Example"
+  },
+  {
+    "page": 74,
+    "text": "Logistic Regression\n\u2022 Example"
+  },
+  {
+    "page": 75,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 76,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 77,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 78,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 79,
+    "text": ""
+  },
+  {
+    "page": 80,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 81,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 82,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 83,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 84,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 85,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 86,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 87,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 88,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 89,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 90,
+    "text": "Na\u00efve Bayes Classifier\n\u2022 Find the probability of a Plastic, Round, Red, Locally Made item being defective"
+  },
+  {
+    "page": 91,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 92,
+    "text": "Na\u00efve Bayes Classifier"
+  },
+  {
+    "page": 93,
+    "text": "Na\u00efve Bayes Classifier \u2013 Multi class classification"
+  },
+  {
+    "page": 94,
+    "text": "Na\u00efve Bayes Classifier \u2013 Multi class classification"
+  },
+  {
+    "page": 95,
+    "text": "Na\u00efve Bayes Classifier \u2013 Multi class classification"
+  },
+  {
+    "page": 96,
+    "text": "Na\u00efve Bayes Classifier \u2013 Multi class classification"
+  },
+  {
+    "page": 97,
+    "text": "Na\u00efve Bayes Classifier \u2013 Multi class classification"
+  },
+  {
+    "page": 98,
+    "text": "Na\u00efve Bayes Classifier \u2013 Multi class classification"
+  },
+  {
+    "page": 99,
+    "text": "Na\u00efve Bayes Classifier \u2013 Multi class classification"
+  },
+  {
+    "page": 100,
+    "text": "Na\u00efve Bayes Classifier \u2013 Multi class classification"
+  },
+  {
+    "page": 101,
+    "text": "K-Nearest Neighbour(KNN)\no K-Nearest Neighbour is one of the simplest Machine Learning algorithms based on Supervised Learning\ntechnique.\no K-NN algorithm assumes the similarity between the new case/data and available cases and put the new case\ninto the category that is most similar to the available categories.\no K-NN algorithm stores all the available data and classifies a new data point based on the similarity. This means\nwhen new data appears then it can be easily classified into a well suite category by using K- NN algorithm.\no K-NN algorithm can be used for Regression as well as for Classification but mostly it is used for the\nClassification problems.\no K-NN is a non-parametric algorithm, which means it does not make any assumption on underlying data.\no It is also called a lazy learner algorithm because it does not learn from the training set immediately instead it\nstores the dataset and at the time of classification, it performs an action on the dataset.\no KNN algorithm at the training phase just stores the dataset and when it gets new data, then it classifies that\ndata into a category that is much similar to the new data."
+  },
+  {
+    "page": 102,
+    "text": "Example: Suppose, we have an image of a creature that looks similar to cat and dog, but we want to know\neither it is a cat or dog. So for this identification, we can use the KNN algorithm, as it works on a similarity\nmeasure. Our KNN model will find the similar features of the new data set to the cats and dogs images and\nbased on the most similar featuresit will put it in either cat or dog category."
+  },
+  {
+    "page": 103,
+    "text": "Why do we need a K-NN Algorithm?"
+  },
+  {
+    "page": 104,
+    "text": "How does K-NN work?\no Step-1: Select the number K of the neighbors\no Step-2: Calculate the Euclidean distance of K number of neighbors\no Step-3: Take the K nearest neighbors as per the calculated Euclidean distance.\no Step-4: Among these k neighbors, count the number of the data points in each\ncategory.\no Step-5: Assign the new data points to that category for which the number of the\nneighbor is maximum.\no Step-6: Our model is ready."
+  },
+  {
+    "page": 105,
+    "text": "How to Choose k value?"
+  },
+  {
+    "page": 106,
+    "text": "Euclidean Distance Formula"
+  },
+  {
+    "page": 107,
+    "text": "\u2022 Suppose we have a new data point and we need to put it in the required category.\nConsider the below image:\no Firstly,we will choose the number of neighbors, so we will choose the k=5.\n\u2022 Next, we will calculate the Euclidean distance between the data points."
+  },
+  {
+    "page": 108,
+    "text": "\u2022 By calculating the Euclidean distance we got the nearest neighbors, as three nearest neighbors in category A and two\nnearest neighbors in category B.\n\u2022 Consider the below image:\n\u2022 As we can see the 3 nearest neighbors are from category A, hence this new data point must belong to category A."
+  },
+  {
+    "page": 109,
+    "text": ""
+  },
+  {
+    "page": 110,
+    "text": ""
+  },
+  {
+    "page": 111,
+    "text": ""
+  },
+  {
+    "page": 112,
+    "text": "x1 y1 x2 y2 Distance\n5.3 3.7 5.2 3.1 0.608276\n5.1 3.8 5.2 3.1 0.707107\n7.2 3 5.2 3.1 2.002498\n5.4 3.4 5.2 3.1 0.360555\n5.1 3.3 5.2 3.1 0.223607\n5.4 3.9 5.2 3.1 0.824621\n7.4 2.8 5.2 3.1 2.22036\n6.1 2.8 5.2 3.1 0.948683\n7.3 2.9 5.2 3.1 2.109502\n6 2.7 5.2 3.1 0.894427\n5.8 2.8 5.2 3.1 0.67082\n6.3 2.3 5.2 3.1 1.360147\n5.1 2.5 5.2 3.1 0.608276\n6.3 2.5 5.2 3.1 1.252996\n5.5 2.4 5.2 3.1 0.761577"
+  },
+  {
+    "page": 113,
+    "text": ""
+  },
+  {
+    "page": 114,
+    "text": ""
+  },
+  {
+    "page": 115,
+    "text": "How to select the value of K in the K-\nNN Algorithm?\n\u2022 Below are some points to remember while selecting the value of K in the K-NN\nalgorithm:\n\u2022 There is no particular way to determine the best value for \"K\", so we need to try some\nvalues to find the best out of them. The most preferred value for K is 5.\n\u2022 A very low value for K such as K=1 or K=2, can be noisy and lead to the effects of outliers in\nthe model.\n\u2022 Large values for K are good, but it may find some difficulties."
+  },
+  {
+    "page": 116,
+    "text": "Support Vector Machine\n\u2022 Support Vector Machine or SVM is one of the most popular Supervised Learning\nalgorithms, which is used for Classification as well as Regression problems.\nHowever, primarily, it is used for Classification problems in Machine Learning.\n\u2022 The goal of the SVM algorithm is to create the best line or decision boundary that\ncan segregate n-dimensional space into classes so that we can easily put the new\ndata point in the correct category in the future. This best decision boundary is\ncalled a hyperplane."
+  },
+  {
+    "page": 117,
+    "text": "SVM\n\u2022 SVM chooses the extreme points/vectors that help in creating the\nhyperplane.\n\u2022 These extreme cases are called as support vectors, and hence\nalgorithm is termed as Support Vector Machine.\n\u2022 Consider the below diagram in which there are two different\ncategories that are classified using a decision boundary or\nhyperplane."
+  },
+  {
+    "page": 118,
+    "text": ""
+  },
+  {
+    "page": 119,
+    "text": "Example\nSVM algorithm can be used for Face detection, image classification, text \ncategorization, etc."
+  },
+  {
+    "page": 120,
+    "text": "Support Vector Machine"
+  },
+  {
+    "page": 121,
+    "text": "Support Vector Machine"
+  },
+  {
+    "page": 122,
+    "text": "Support Vector Machine"
+  },
+  {
+    "page": 123,
+    "text": "Support Vector Machine"
+  },
+  {
+    "page": 124,
+    "text": "Support Vector Machine"
+  },
+  {
+    "page": 125,
+    "text": "Support Vector Machine"
+  },
+  {
+    "page": 126,
+    "text": "Support Vector Machine"
+  },
+  {
+    "page": 127,
+    "text": "\u2022 SVM chooses the extreme points/vectors that help in creating the hyperplane. These extreme cases are\ncalled as support vectors, and hence algorithm is termed as Support Vector Machine. Consider the below\ndiagram in which there are two different categories that are classified using a decision boundary or\nhyperplane:"
+  },
+  {
+    "page": 128,
+    "text": "Hyperplane and Support Vectors in the \nSVM\n\u2022 Hyperplane: There can be multiple lines/decision boundaries to segregate the classes in n-dimensional space, but\nwe need to find out the best decision boundary that helps to classify the data points. This best boundary is known\nas the hyperplane of SVM.\n\u2022 The dimensions of the hyperplane depend on the features present in the dataset, which means if there are 2\nfeatures (as shown in image), then hyperplane will be a straight line. And if there are 3 features, then hyperplane\nwill be a 2-dimension plane.\n\u2022 We always create a hyperplane that has a maximum margin, which means the maximum distance between the data\npoints.\n\u2022 Support Vectors:\n\u2022 The data points or vectors that are the closest to the hyperplane and which affect the position of the hyperplane are\ntermed as Support Vector. Since these vectors support the hyperplane, hence called a Support vector."
+  },
+  {
+    "page": 129,
+    "text": "Types of SVM\n\u2022 SVM can be of two types:\no Linear SVM: Linear SVM is used for linearly separable data, which means if a dataset can be classified into\ntwo classes by using a single straight line, then such data is termed as linearly separable data, and\nclassifier is used called as Linear SVM classifier.\no Non-linear SVM: Non-Linear SVM is used for non-linearly separated data, which means if a dataset\ncannot be classified by using a straight line, then such data is termed as non-linear data and classifier\nused is called as Non-linear SVM classifier."
+  },
+  {
+    "page": 130,
+    "text": "How does SVM works?\nLinear SVM:\n\u2022 The working of the SVM algorithm can be understood by using an example. Suppose we have a\ndataset that has two tags (green and blue), and the dataset has two features x1 and x2. We want a\nclassifier that can classify the pair(x1, x2) of coordinates in either green or blue. Consider the below\nimage:"
+  },
+  {
+    "page": 131,
+    "text": "\u2022 So as it is 2-d space so by just using a straight line, we can easily separate these two\nclasses. But there can be multiple lines that can separate these classes. Consider the below\nimage:\n\u2022 Hence, the SVM algorithm helps to find the best line or decision boundary; this best boundary\nor region is called as a hyperplane. SVM algorithm finds the closest point of the lines from\nboth the classes. These points are called support vectors. The distance between the vectors\nand the hyperplane is called as margin. And the goal of SVM is to maximize this margin.\nThe hyperplane with maximum margin is called the optimal hyperplane."
+  },
+  {
+    "page": 132,
+    "text": "\u2022 Linear SVM\nDistance between the support vectors and the hyperplane should be as far as possible."
+  },
+  {
+    "page": 133,
+    "text": "Non-Linear SVM\n\u2022 If data is linearly arranged, then we can separate it by using a straight line, but for non-linear data,\nwe cannot draw a single straight line. Consider the below image:"
+  },
+  {
+    "page": 134,
+    "text": "\u2022 So to separate these data points, we need to add one more dimension. For linear\ndata, we have used two dimensions x and y, so for non-linear data, we will add a\nthird dimension z. It can be calculated as:\nz=x2 +y2\n\u2022 By adding the third dimension, the sample space will become as below image:"
+  },
+  {
+    "page": 135,
+    "text": "\u2022 So now, SVM will divide the datasets into classes in the following way. Consider the below image:\n\u2022 Since we are in 3-d Space, hence it is looking like a plane parallel to the x-axis. If we convert it in 2d space with z=1, then it will\nbecome as:\n\u2022 Hence we get a circumference of radius 1 in case of non-linear data."
+  },
+  {
+    "page": 136,
+    "text": "Linear SVM"
+  },
+  {
+    "page": 137,
+    "text": "Nonlinear Support Vector Machine\n\u2022 What if decision boundary is not linear?\nY=-1\nY=1\nEuclidean Distance"
+  },
+  {
+    "page": 138,
+    "text": "Characteristics of SVM"
+  },
+  {
+    "page": 139,
+    "text": "What is Kernel method in machine \nlearning?\n\u2022 Kernels or kernel methods (also called Kernel functions) are sets of different types of algorithms that are\nbeing used for pattern analysis.\n\u2022 They are used to solve a non-linear problem by using a linear classifier. Kernels Methods are employed in SVM\n(Support Vector Machines) which are used in classification and regression problems.\n\u2022 The SVM uses what is called a \u201cKernel Trick\u201d where the data is transformed and an optimal boundary is found\nfor the possible outputs.\n\u2022 You can break SVM strategy down into two steps:\n\u2022 First, the data is projected implicitly onto a high-dimensional space through the kernel trick.\n\u2022 The second step involves applying a linear classifier to the projected data."
+  },
+  {
+    "page": 140,
+    "text": "Kernel Method\n\u2022 The Kernel function will usually convert the training set of data so that a non-linear decision\nsurface can be transformed to a linear equation in a higher number of dimension spaces.\n\u2022 Essentially, it gives back the inner product between two points in a standard feature dimension.\n\u2022 Kernel functions are applied to every data instance for the purpose of mapping the original\nnonlinear observations into a higher-dimensional space.\n\u2022 These observations become separable in the higher-dimensional space."
+  },
+  {
+    "page": 141,
+    "text": "The Need for Kernel Method and its Working\nIt is very difficult to solve this classification using a linear classifier as there is no good linear line that should be ab le to \nclassify the red and the green dots as the points are randomly distributed."
+  },
+  {
+    "page": 142,
+    "text": "\u2022 Here comes the use of kernel function which takes the points to higher dimensions,\nsolves the problem over there and returns the output.\n\u2022 Think of this in this way, we can see that the green dots are enclosed in some perimeter\narea while the red one lies outside it, likewise, there could be other scenarios where\ngreen dots might be distributed in a trapezoid-shaped area.\n\u2022 So what we do is to convert the two-dimensional plane which was first classified by one-\ndimensional hyperplane (\u201cor a straight line\u201d) to the three-dimensional area and here our\nclassifier i.e. hyperplane will not be a straight line but a two-dimensional plane which will\ncut the area."
+  },
+  {
+    "page": 143,
+    "text": "\u2022 In order to get a mathematical understanding of kernel, let us understand the Lili Jiang\u2019s\nequation of kernel which is:\nK(x, y)=<f(x), f(y)>\nwhere,\n\u2022 K is the kernel function,\n\u2022 X and Y are the dimensional inputs,\n\u2022 f is the map from n-dimensional to m-dimensional space and,\n\u2022 < x, y > is the dot product."
+  },
+  {
+    "page": 144,
+    "text": "Illustration with the help of an example.\nLet us say that we have two points, x= (2, 3, 4) and y= (3, 4, 5)\nAs we have seen, K(x, y) = < f(x), f(y) >.\nLet us first calculate < f(x), f(y) >\nf(x)=(x1x1, x1x2, x1x3, x2x1, x2x2, x2x3, x3x1, x3x2, x3x3)\nf(y)=(y1y1, y1y2, y1y3, y2y1, y2y2, y2y3, y3y1, y3y2, y3y3)\nso,\nf(2, 3, 4)=(4, 6, 8, 6, 9, 12, 8, 12, 16)and\nf(3 ,4, 5)=(9, 12, 15, 12, 16, 20, 15, 20, 25)\nso the dot product,\nf (x). f (y) = f(2,3,4) . f(3,4,5)=(36 + 72 + 120 + 72 +144 + 240 + 120 + 240 + 400)=1444\nAnd, K(x, y) = (2*3 + 3*4 + 4*5) ^2=(6 + 12 + 20)^2=38*38=1444.\nThis as we find out, f(x).f(y) and K(x, y) give us the same result, but the former method required a lot of calculations(because of projecting 3 dimensions into 9\ndimensions) while using the kernel, it was much easier."
+  },
+  {
+    "page": 145,
+    "text": "What are the types of Kernel methods in SVM models?\nSupport vector machines use various kinds of kernel methods. Here are a few of them:\n1. Liner Kernel\nLet us say that we have two vectors with name x1 and Y1, then the linear kernel is defined by the dot product of these two vectors:\nK(x1, x2) = x1 . x2\n2. Polynomial Kernel\nA polynomial kernel is defined by the following equation:\nK(x1, x2) = (x1 . x2 + 1)d\nWhere, d is the degree of the polynomial and x1 and x2 are vectors"
+  },
+  {
+    "page": 146,
+    "text": "3. Gaussian Kernel\n4. Exponential Kernel\n5. Laplacian Kernel"
+  },
+  {
+    "page": 147,
+    "text": ""
+  },
+  {
+    "page": 148,
+    "text": "Decision Trees\n\u2022 Supervised learning technique\n\u2022 Used for both classification and Regression problems,\nbut mostly it is preferred for solving Classification\nproblems.\n\u2022 Tree-structured classifier\n\u2022 Internal nodes represent the features of a dataset,\nbranches represent the decision rules and each leaf\nnode represents the outcome."
+  },
+  {
+    "page": 149,
+    "text": "Decision Trees\n\u2022 It is a graphical representation for getting all the\npossible solutions to a problem/decision based on\ngiven conditions.\n\u2022 It is called a decision tree because, similar to a tree, it\nstarts with the root node, which expands on further\nbranches and constructs a tree-like structure.\n\u2022 A decision tree simply asks a question, and based on\nthe answer (Yes/No), it further split the tree into\nsubtrees."
+  },
+  {
+    "page": 150,
+    "text": "Decision Trees"
+  },
+  {
+    "page": 151,
+    "text": "Decision Trees\n1.Root Node: It represents the entire population or sample and this further gets divided into two or\nmore homogeneous sets.\n2.Splitting: It is a process of dividing a node into two or more sub-nodes.\n3.Decision Node: When a sub-node splits into further sub-nodes, then it is called the decision\nnode.\n4.Leaf / Terminal Node: Nodes do not split is called Leaf or Terminal node.\n5.Pruning: When we remove sub-nodes of a decision node, this process is called pruning. You can\nsay the opposite process of splitting.\n6.Branch / Sub-Tree: A subsection of the entire tree is called branch or sub-tree.\n7.Parent and Child Node: A node, which is divided into sub-nodes is called a parent node of sub-\nnodes whereas sub-nodes are the child of a parent node."
+  },
+  {
+    "page": 152,
+    "text": "Decision Trees"
+  },
+  {
+    "page": 153,
+    "text": "Decision Trees"
+  },
+  {
+    "page": 154,
+    "text": "Decision Trees"
+  },
+  {
+    "page": 155,
+    "text": "A Decision Tree for the concept PlayTennis\n\u2022 This tree classifies Saturday mornings according to \nwhether or not they are suitable for playing tennis."
+  },
+  {
+    "page": 156,
+    "text": "Training Dataset"
+  },
+  {
+    "page": 157,
+    "text": "Algorithms used in Decision Trees:\nID3 \u2192 (extension of D3)\nC4.5 \u2192 (successor of ID3)\nCART \u2192 (Classification And Regression Tree)\nCHAID \u2192 (Chi-square automatic interaction detection Performs multi-level\nsplits when computing classification trees)\nMARS \u2192 (multivariate adaptive regression splines)"
+  },
+  {
+    "page": 158,
+    "text": "Steps in ID3 algorithm:"
+  },
+  {
+    "page": 159,
+    "text": "Attribute Selection Measures\n\u2022 If the dataset consists of N attributes then deciding\nwhich attribute to place at the root or at different levels\nof the tree as internal nodes is a complicated step.\n\u2022 By just randomly selecting any node to be the root can\u2019t\nsolve the issue.\n\u2022 If we follow a random approach, it may give us bad\nresults with low accuracy."
+  },
+  {
+    "page": 160,
+    "text": "Attribute Selection Measures\n\u2022 Entropy\n\u2022 Information gain\n\u2022 Gini index\n\u2022 Gain Ratio\n\u2022 Reduction in Variance\n\u2022 Chi-Square"
+  },
+  {
+    "page": 161,
+    "text": "Attribute Selection Measures-\nEntropy\n\u2022 Measure of the randomness in the information\nbeing processed.\n\u2022 The higher the entropy, the harder it is to draw\nany conclusions from that information.\n\u2022 Flipping a coin is an example of an action that\nprovides information that is random."
+  },
+  {
+    "page": 162,
+    "text": "Attribute Selection Measures-\nEntropy\n\u2022 Entropy for an attribute is represented as:\n\u2022 pi is the probability of randomly selecting an example \nin class i."
+  },
+  {
+    "page": 163,
+    "text": "Attribute Selection Measures-\nEntropy\n\u2022 Entropy H(X) is zero when the\nprobability is either 0 or 1.\n\u2022 The Entropy is maximum when the\nprobability is 0.5 because it projects\nperfect randomness in the data and\nthere is no chance if perfectly\ndetermining the outcome."
+  },
+  {
+    "page": 164,
+    "text": "Example"
+  },
+  {
+    "page": 165,
+    "text": "Node purity"
+  },
+  {
+    "page": 166,
+    "text": "Entropy calculation \n\u2013 Here the percentage of students who play cricket \nis 0.5 and the percentage of students who do not \nplay cricket is of course also 0.5.\n\u2013 Since the log of 0.5 bases two is -1, the entropy \nfor this node will be 1"
+  },
+  {
+    "page": 167,
+    "text": "Entropy calculation in a pure node\nEntropy is zero here\nLower entropy means more pure node and higher entropy means less pure nodes."
+  },
+  {
+    "page": 168,
+    "text": "Attribute Selection Measures-\nInformation Gain\n\u2022 Information gain or IG is a statistical property that\nmeasures how well a given attribute separates the\ntraining examples according to their target classification.\n\u2022 Constructing a decision tree is all about finding an\nattribute that returns the highest information gain and\nthe smallest entropy."
+  },
+  {
+    "page": 169,
+    "text": "Information Gain\n\u2022 Information gain is a decrease in entropy.\n\u2022 It computes the difference between entropy before split and\naverage entropy after split of the dataset based on given attribute\nvalues.\n\u2022 ID3 (Iterative Dichotomiser) decision tree algorithm uses\ninformation gain."
+  },
+  {
+    "page": 170,
+    "text": "Information gain as entropy reduction\n\u2022 a measure of the effectiveness of an attribute in classifying the training \ndata is called information gain,\n\u2022 This is the expected reduction in entropy caused by partitioning the \nexamples according to this attribute.\n\u2022 The information gain, Gain(S, A) of an attribute A,"
+  },
+  {
+    "page": 171,
+    "text": "Example"
+  },
+  {
+    "page": 172,
+    "text": "Humidity Wind Play\nHigh Week Yes\nHigh Week Yes\nNormal Week Yes\nNormal Strong Yes\nNormal Strong Yes\nHigh Week No\nHigh Strong No\nHigh Week Yes\nNormal Week Yes\nNormal Week Yes\nNormal Strong Yes\nHigh Week No\nHigh Strong No\nNormal Strong No"
+  },
+  {
+    "page": 173,
+    "text": ""
+  },
+  {
+    "page": 174,
+    "text": ""
+  },
+  {
+    "page": 175,
+    "text": ""
+  },
+  {
+    "page": 176,
+    "text": ""
+  },
+  {
+    "page": 177,
+    "text": ""
+  },
+  {
+    "page": 178,
+    "text": ""
+  },
+  {
+    "page": 179,
+    "text": ""
+  },
+  {
+    "page": 180,
+    "text": "Which attribute is the best classifier?"
+  },
+  {
+    "page": 181,
+    "text": "Gini Index\n\u2022 The Gini index is a measure of impurity or diversity used in decision tree algorithms, particularly in\nclassification tasks. It helps the algorithm determine the optimal split at each node of the tree during the\ntraining process.\n\u2022 The Gini index ranges from 0 to 1, where 0 indicates that the node is pure (all instances belong to the same\nclass), and 1 indicates maximum impurity (the classes are evenly distributed).\n\u2022 Used in CART"
+  },
+  {
+    "page": 182,
+    "text": "Decision Tree"
+  },
+  {
+    "page": 183,
+    "text": "How to avoid/counter Overfitting \nin Decision Trees?\n\u2022 Building trees that \u201cadapt too much\u201d to the training\nexamples may lead to \u201coverfitting\u201d.\n\u2022 Way to remove overfitting:\nPruning Decision Trees"
+  },
+  {
+    "page": 184,
+    "text": "Pruning Decision Trees\n\u2022 The splitting process results in fully grown trees until the stopping\ncriteria are reached. But, the fully grown tree is likely to overfit the\ndata, leading to poor accuracy on unseen data."
+  },
+  {
+    "page": 185,
+    "text": "Pruning Decision Trees"
+  },
+  {
+    "page": 186,
+    "text": "Pruning Decision Trees\n\u2022 In pruning, you trim off the branches of the tree, i.e., remove the decision nodes\nstarting from the leaf node such that the overall accuracy is not disturbed.\n\u2022 This is done by segregating the actual training set into two sets: training data set, D\nand validation data set, V.\n\u2022 Prepare the decision tree using the segregated training data set, D.\n\u2022 Then continue trimming the tree accordingly to optimize the accuracy of the\nvalidation data set, V."
+  },
+  {
+    "page": 187,
+    "text": "Pruning Decision Trees"
+  }
+]
